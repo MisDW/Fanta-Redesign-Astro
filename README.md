@@ -1,3 +1,4 @@
+HEAD
 # Astro Starter Kit: Basics
 
 ```sh
@@ -52,3 +53,7 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+# page-fanta-astro
+This page make with astro and tailwind to a redesign page coca cola 
+>>>>>>> befb79c80b0cb5008e5fee256931880fd2341d55
