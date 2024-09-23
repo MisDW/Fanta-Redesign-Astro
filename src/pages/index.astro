@@ -1,5 +1,4 @@
 ---
-
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Nav from '../components/Nav.astro';
@@ -7,22 +6,10 @@ import Object from '../components/Object.astro'
 ---
 
 <Layout title="Fan Tasia.">
-	<div class="container">
-		<div>Icono</div>
-		<Nav />
-		<div><i class="fa-solid fa-bars"></i></div>
-	</div>
-	<div class="container">
-		<Card />
-		<Object />
+	<Nav />
+	<div class="flex justify-between gap-10 max-w-2xl min-w-sm m-auto">
+		<Card/>
+		<Object/>
 	</div>
 </Layout>
-
-<style>
-	.container{
-		display: flex;
-		justify-content: space-around;
-		gap: 10px;
-	}
-</style>
 

@@ -1,27 +1,19 @@
-<div class="container-object">
-    <img class="object" width="100px" src="../src/image/fanta.png" alt="fanta soda">
-    <i class="icon-right fa-solid fa-chevron-right"></i>
+---
+import Grape from "./Grape.astro"
+---
+
+<div class="relative w-full flex justify-center">
+    <div class="relative flex">
+        <img class="animate-jump relative rotate-12 shadow-object" width="120px" src="image/fanta.png" alt="fanta soda">
+    </div>
+    <i class="absolute top-1/2 right-10 text-4xl text-slate-50 cursor-pointer fa-solid fa-chevron-right"></i>
+    <img class=" rotate-6 absolute right-12 bottom-5" width="110px" src="image/hielo.png" alt="hielo">
+    <img class=" rotate-90 absolute left-6 bottom-20" width=90px" src="image/hielo.png" alt="hielo">
+    <Grape style="rotate-2 absolute left-0 bottom-0" size="1" />
 </div>
 
 <style>
-    .container-object{
-        position: relative;
-        /* border: 1px solid red; */
-    }
-
-    .object{
-        rotate: 15deg;
-        position: relative;
-        left: -2rem;
-        filter: drop-shadow(15px 15px 20px rgba(0, 0, 0, 0.4));
-    }
-
-    .icon-right{
-        position: absolute;
-        top: 45%;
-        font-size: 2.5rem;
-        color: #ffff;
-        right: -10px;
-        cursor: pointer;
+    .shadow-object{
+        filter: drop-shadow(20px 20px 15px rgb(0, 0, 0, 0.5));
     }
 </style>
