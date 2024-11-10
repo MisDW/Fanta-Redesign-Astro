@@ -1,0 +1,10 @@
+---
+interface Props {
+	style: string;
+	size: string;
+}
+
+const { style ,size } = Astro.props;
+---
+
+<img class=`${style}` width=`${parseFloat(size)*150}px` src="image/hoja_0.png" alt="uvas">

@@ -3,13 +3,73 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Nav from '../components/Nav.astro';
 import Object from '../components/Object.astro'
+import Sheet from '../components/Sheet.astro'
 ---
 
 <Layout title="Fan Tasia.">
-	<Nav />
-	<div class="flex justify-between gap-10 max-w-2xl min-w-sm m-auto">
-		<Card/>
-		<Object/>
-	</div>
+	<main id="container_page" class="h-dvh relative overflow-hidden">
+		<Nav />
+		<div class="flex justify-between gap-10 max-w-2xl min-w-sm m-auto">
+			<Card/>
+			<Object/>
+		</div>
+		<Sheet style="-rotate-[25deg] absolute -right-40 -bottom-[200px]" size="3" />
+		<Sheet style="rotate-[50deg] absolute -left-40 -bottom-[200px]" size="3" />
+	</main>
 </Layout>
 
+<script>
+	// const object = [] <-- array
+	// list 
+	const object = [
+		// object[0]
+		{
+			fruta: 'naranja.jpg',
+			color: 'linear-gradient(120deg, #f5de5d 0%, #ba4b1c 100%)',
+			fanta: 'image/fantaNaranja.png',
+			info: {
+				title: 'FANTA NARANJA',
+				description: 'Vuelve más divertidos tus momentos con el intenso y frutal sabor de Fanta Naranja.'
+			}
+		},
+		// object[1]
+		{
+			fruta: 'fresa.jpg',
+			color: 'linear-gradient(120deg, #fcb1ce 0%, #bd282d 100%)',
+			fanta: 'image/fantaFresa.png',
+			info: {
+				title: 'FANTA FRESA',
+				description: '¡Fanta fresa intensifica la diversión y el sabor de tus snacks con su delicioso, frutal y burbujeante sabor!'
+			}
+		},
+		// object[2]
+		{
+			fruta: 'uva.jpg',
+			color: 'linear-gradient(120deg, #c7a8e3 0%, #281c4f 100%)',
+			fanta: 'image/fantaUva.png',
+			info: {
+				title: 'FANTA UVA',
+				description: '¡Refresco frutal sabor uva, intenso y divertido · Ideal para una tarde con amigos o para acompañar tus snacks favoritos!'
+			}
+		}
+	]
+
+	var count = -1
+	
+	const next_btn = document.getElementById('next_btn') as HTMLElement
+	const fanta_obj = document.getElementById('fanta_obj') as HTMLImageElement
+	const title_text = document.getElementById('title') as HTMLElement
+	const description_text = document.getElementById('description') as HTMLElement
+	const container_page = document.getElementById('container_page') as HTMLElement
+
+	next_btn.addEventListener('click', (e)=>{
+		count++
+		count > 2 ? count = 0 : count
+
+		const { fruta, color, fanta, info:{title, description} } = object[count]
+		fanta_obj.src = fanta
+		title_text.innerHTML = title
+		description_text.innerHTML = description
+		container_page.style.backgroundImage = color
+	})
+</script>
